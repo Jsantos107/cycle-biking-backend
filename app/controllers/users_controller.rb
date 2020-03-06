@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
+    def index
+        render json: {message: "Fuck!"}
+    end
     def show
-        @user = User.find(params[:id]) 
-        render json: {user: @user}, include: :post
+        authenticate 
+        render json: {user: @user}, include: [:posts, :checklist_items]
     end
 
     def create 
