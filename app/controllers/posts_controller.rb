@@ -5,7 +5,7 @@ class PostsController < ApplicationController
         render json: {post: @post}, include: :user
     end
     def show 
-        @post = Post.find_by(params[:id])
+        @post = Post.find(params[:id])
         render json:{post: @post}
     end
     def create 
@@ -17,11 +17,12 @@ class PostsController < ApplicationController
         render json: {post: @post}
     end
     def update
-        if @post.update(params[:id])
+      @post = Post.find(params[:id])
+      
+      @post.update(
+        description: params[:description]
+      )
           render json: @post
-        else
-          render json: @post.errors, status: :unprocessable_entity
-        end
       end
     
       def destroy

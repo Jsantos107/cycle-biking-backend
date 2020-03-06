@@ -15,13 +15,6 @@ class ChecklistItemsController < ApplicationController
         )
         render json: {checklist_item: @checklist_item}
     end
-    def update
-        if @checklist_item.update(params[:id])
-          render json: @checklist_item
-        else
-          render json: @checklist_item.errors, status: :unprocessable_entity
-        end
-      end
     
       def destroy
         @checklist_item = ChecklistItem.find(params[:id])
