@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# bike-backend
 
-Things you may want to cover:
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Contact](#contact)
 
-* Ruby version
+## General info
+Cycle biking is a single page application that allows users to view and submit posts if seeking to help other cyclists and stay organized with a checklist. Users can also create a user account, which enables them to log in, create a bike route and explore the world.
 
-* System dependencies
+## Technologies
+* Ruby on rails 
+* SQLite
+* Heroku
 
-* Configuration
+## Setup
+To run this project locally, clone the GitHub repository and run
 
-* Database creation
+```
+bundle
+Rails db:create
+Rails db:migrate
+Rails db:seed
+rails s
+```
+Then open your browser (preferably Chrome) and go to http://localhost:3000 to begin.
 
-* Database initialization
+## Features
+* Create and authenticate a user
+* Create and delete a checklist item  
+* Create and delete a post
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contact
+Created by [Jorge Santos](https://www.linkedin.com/in/santos-jorge)
